@@ -1,3 +1,24 @@
-<h1>Contato</h1>
-<p>Email: seuemail@exemplo.com</p>
-<p>GitHub: github.com/seuusuario</p>
+<mat-card class="contato-card">
+  <mat-card-header>
+    <mat-card-title>Contato</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Email: seuemail.com</p>
+    <p>GitHub: <a href="https://github.com/seuusuario" target="_blank">github.com/seuusuario</a></p>
+    <form #contatoForm="ngForm" (ngSubmit)="enviarMensagem()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput name="nome" ngModel required>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput name="email" ngModel required email>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Mensagem</mat-label>
+        <textarea matInput name="mensagem" ngModel required rows="5"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!contatoForm.valid">Enviar</button>
+    </form>
+  </mat-card-content>
+</mat-card>

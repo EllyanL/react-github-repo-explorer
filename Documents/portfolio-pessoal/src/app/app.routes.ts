@@ -5,9 +5,9 @@ import { ProjetosComponent } from './projetos/projetos.component';
 import { ContatoComponent } from './contato/contato.component';
 
 export const routes: Routes = [
-    {path:'', component: HomeComponent},
-    {path: 'sobre', component: SobreComponent},
-    {path:'projetos', component:ProjetosComponent},
-    {path:'contato', component: ContatoComponent},
-    {path: '**', redirectTo: ''} // ==> Redirecionamento para Home caso rota não existir
+  { path: '', component: HomeComponent, data: { animation: 'HomePage' } },
+  { path: 'sobre', component: SobreComponent, data: { animation: 'SobrePage' } },
+  { path: 'projetos', component: ProjetosComponent, data: { animation: 'ProjetosPage' } },
+  { path: 'contato', component: ContatoComponent, data: { animation: 'ContatoPage' } },
+  { path: '**', redirectTo: '' }
 ];

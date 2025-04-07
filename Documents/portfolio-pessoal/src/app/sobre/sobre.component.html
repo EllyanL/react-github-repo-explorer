@@ -1,2 +1,20 @@
-<h1>Sobre Mim</h1>
-<p>Escreva algo sobre você: sua formação, habilidades (ex.: Angular, JavaScript), e interesses.</p>
+<mat-card class="sobre-card">
+  <mat-card-header>
+    <mat-card-title>Sobre Mim</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Escreva algo sobre você: sua formação, habilidades (ex.: Angular, JavaScript), e interesses.</p>
+    <mat-list>
+      <mat-list-item>
+        <mat-icon matListItemIcon>school</mat-icon>
+        <span matListItemTitle>Formação</span>
+        <span matListItemLine>[Sua Formação]</span>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListItemIcon>code</mat-icon>
+        <span matListItemTitle>Habilidades</span>
+        <span matListItemLine>Angular, JavaScript, TypeScript, HTML, CSS</span>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

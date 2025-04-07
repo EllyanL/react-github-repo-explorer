@@ -1,0 +1,19 @@
+.projetos-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.projeto-card {
+  transition: transform 0.3s;
+}
+
+.projeto-card:hover {
+  transform: scale(1.05);
+}
