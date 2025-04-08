@@ -1,15 +1,91 @@
-<div class="home-container">
-  <mat-card class="hero-card">
-    <mat-card-header>
-      <mat-card-title>Bem-vindo ao Meu Portfólio</mat-card-title>
-      <mat-card-subtitle>Oi, eu sou [Seu Nome]!</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>Aqui você encontra meus projetos, habilidades e informações sobre mim.</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary" routerLink="/projetos">Ver Projetos</button>
-      <button mat-raised-button color="accent" routerLink="/contato">Entrar em Contato</button>
-    </mat-card-actions>
-  </mat-card>
+<div class="hero-section">
+  <div class="hero-content">
+    <h1>Ellyan Lopes</h1>
+    <h2>Analista e Desenvolvedor Júnior</h2>
+    <p>
+      Sou um analista e desenvolvedor de sistemas especializado em desenvolvimento front-end e back-end. Escrevo sobre desenvolvimento de software no meu blog. Quer saber como posso ajudar no seu projeto? Confira meu portfólio e currículo online.
+    </p>
+    <div class="hero-actions">
+      <button mat-raised-button color="primary" routerLink="/projetos">
+        <mat-icon>visibility</mat-icon> Ver Portfólio
+      </button>
+      <button mat-raised-button color="accent" routerLink="/resume">
+        <mat-icon>description</mat-icon> Ver Currículo
+      </button>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="assets/profile-large.jpg" alt="Ellyan Lopes" (error)="handleImageError($event)">
+  </div>
+</div>
+
+<div class="what-i-do">
+  <h3><span class="highlight">What I do</span></h3>
+  <p>I have more than 10 years’ experience building software for clients all over the world. Below is a quick overview of my main technical skill sets and technologies I use. Want to find out more about my experience? Check out my online resume and project portfolio.</p>
+  <div class="skills-grid">
+    <mat-card class="skill-card">
+      <mat-card-title>
+        <mat-icon>javascript</mat-icon> Vanilla JavaScript
+      </mat-card-title>
+      <mat-card-content>
+        <p>List skills/technologies here. You can change the icon above to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="skill-card">
+      <mat-card-title>
+        <mat-icon>code</mat-icon> Angular, React & Vue
+      </mat-card-title>
+      <mat-card-content>
+        <p>List skills/technologies here. You can change the icon above to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="skill-card">
+      <mat-card-title>
+        <mat-icon>developer_board</mat-icon> Node.js
+      </mat-card-title>
+      <mat-card-content>
+        <p>List skills/technologies here. You can change the icon above to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="skill-card">
+      <mat-card-title>
+        <mat-icon>code</mat-icon> Python & Django
+      </mat-card-title>
+      <mat-card-content>
+        <p>List skills/technologies here. You can change the icon above to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="skill-card">
+      <mat-card-title>
+        <mat-icon>php</mat-icon> PHP
+      </mat-card-title>
+      <mat-card-content>
+        <p>List skills/technologies here. You can change the icon above to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="skill-card">
+      <mat-card-title>
+        <mat-icon>build</mat-icon> npm, Gulp & Grunt
+      </mat-card-title>
+      <mat-card-content>
+        <p>List skills/technologies here. You can change the icon above to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="skill-card">
+      <mat-card-title>
+        <mat-icon>html</mat-icon> HTML & CSS
+      </mat-card-title>
+      <mat-card-content>
+        <p>List skills/technologies here. You can change the icon above to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="skill-card">
+      <mat-card-title>
+        <mat-icon>style</mat-icon> Sass & LESS
+      </mat-card-title>
+      <mat-card-content>
+        <p>List skills/technologies here. You can change the icon above to any of the 1500+ FontAwesome 5 free icons available. Aenean commodo ligula eget dolor.</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>

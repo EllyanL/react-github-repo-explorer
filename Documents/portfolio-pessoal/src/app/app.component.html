@@ -1,30 +1,40 @@
 <mat-sidenav-container [ngClass]="isDarkTheme ? 'dark-theme' : 'light-theme'">
-  <mat-sidenav #sidenav mode="side" opened="false" class="sidenav">
+  <mat-sidenav #sidenav mode="side" opened="true" class="sidenav">
+    <div class="sidenav-header">
+      <img src="assets/profile-large.jpg" alt="Ellyan Lopes" class="profile-image">
+      <h2>Ellyan Lopes</h2>
+      <p>Analista e Desenvolvedor Júnior</p>
+      <p class="description">Bem-vindo ao meu portfólio pessoal!</p>
+    </div>
     <mat-nav-list>
-      <a mat-list-item routerLink="/" (click)="sidenav.close()">Home</a>
       <a mat-list-item routerLink="/sobre" (click)="sidenav.close()">Sobre</a>
-      <a mat-list-item routerLink="/projetos" (click)="sidenav.close()">Projetos</a>
+      <a mat-list-item routerLink="/projetos" (click)="sidenav.close()">Portfólio</a>
+      <a mat-list-item routerLink="/servicos" (click)="sidenav.close()">Serviços e Preços</a>
+      <a mat-list-item routerLink="/resume" (click)="sidenav.close()">Currículo</a>
+      <a mat-list-item routerLink="/blog" (click)="sidenav.close()">Blog</a>
       <a mat-list-item routerLink="/contato" (click)="sidenav.close()">Contato</a>
+      <mat-list-item>
+        <button mat-button class="more-pages">Mais Páginas <mat-icon>arrow_drop_down</mat-icon></button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-raised-button color="accent" class="hire-me">Contrate-me</button>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-slide-toggle [(ngModel)]="isDarkTheme" (change)="toggleTheme()">Modo Escuro</mat-slide-toggle>
+      </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
     <mat-toolbar color="primary">
+      <span>Meu Portfólio</span>
+      <span class="spacer"></span>
       <button mat-icon-button (click)="sidenav.toggle()" class="menu-button">
         <mat-icon>menu</mat-icon>
       </button>
-      <span>Meu Portfólio</span>
-      <span class="spacer"></span>
-      <a mat-button routerLink="/" class="nav-link">Home</a>
-      <a mat-button routerLink="/sobre" class="nav-link">Sobre</a>
-      <a mat-button routerLink="/projetos" class="nav-link">Projetos</a>
-      <a mat-button routerLink="/contato" class="nav-link">Contato</a>
-      <button mat-icon-button (click)="toggleTheme()">
-        <mat-icon>{{ isDarkTheme ? 'light_mode' : 'dark_mode' }}</mat-icon>
-      </button>
     </mat-toolbar>
-    <div class="content" [@routeAnimations]="prepareRoute(outlet)">
-      <router-outlet #outlet="outlet"></router-outlet>
+    <div class="content">
+      <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

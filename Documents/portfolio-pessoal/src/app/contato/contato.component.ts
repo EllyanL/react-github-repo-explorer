@@ -22,7 +22,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class ContatoComponent {
   constructor(private snackBar: MatSnackBar) {}
-
+  email = "Ellyan.L@gmail.com";
   enviarMensagem() {
     this.snackBar.open('Mensagem enviada com sucesso!', 'Fechar', {
       duration: 3000,

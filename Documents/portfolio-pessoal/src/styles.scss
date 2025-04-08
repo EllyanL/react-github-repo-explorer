@@ -1,35 +1,25 @@
 @use '@angular/material' as mat;
 
-// Definir as paletas de cores
-$primary-palette: mat.define-palette(mat.$deep-purple-palette);
-$accent-palette: mat.define-palette(mat.$amber-palette);
-$warn-palette: mat.define-palette(mat.$red-palette);
-
-// Definir o tema claro
-$light-theme: mat.define-light-theme((
+// Definir o tema claro (Cyan/Orange)
+$light-theme: mat.define-theme((
   color: (
-    primary: $primary-palette,
-    accent: $accent-palette,
-    warn: $warn-palette,
-  ),
-  typography: mat.define-typography-config(),
-  density: 0,
+    theme-type: light,
+    primary: mat.$cyan-palette,
+    tertiary: mat.$orange-palette,
+  )
 ));
 
 // Definir o tema escuro
-$dark-theme: mat.define-dark-theme((
+$dark-theme: mat.define-theme((
   color: (
-    primary: $primary-palette,
-    accent: $accent-palette,
-    warn: $warn-palette,
-  ),
-  typography: mat.define-typography-config(),
-  density: 0,
+    theme-type: dark,
+    primary: mat.$cyan-palette,
+    tertiary: mat.$orange-palette,
+  )
 ));
 
 // Aplicar o tema claro por padrão
 .light-theme {
-  @include mat.core();
   @include mat.all-component-themes($light-theme);
 
   body {
@@ -37,9 +27,8 @@ $dark-theme: mat.define-dark-theme((
   }
 }
 
-// Aplicar o tema escuro quando a classe dark-theme estiver presente
+// Aplicar o tema escuro
 .dark-theme {
-  @include mat.core();
   @include mat.all-component-themes($dark-theme);
 
   body {
@@ -51,4 +40,12 @@ $dark-theme: mat.define-dark-theme((
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  line-height: 1.6;
 }

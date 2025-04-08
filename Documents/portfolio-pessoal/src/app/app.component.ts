@@ -5,46 +5,31 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { CommonModule } from '@angular/common'; // Importe o CommonModule
-import { trigger, transition, style, animate, query } from '@angular/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule, // Adicione o CommonModule aqui
+    CommonModule,
+    FormsModule,
     RouterOutlet,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSlideToggleModule
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  animations: [
-    trigger('routeAnimations', [
-      transition('* <=> *', [
-        query(':enter, :leave', style({ opacity: 0 }), { optional: true }),
-        query(':leave', [
-          animate('300ms ease-out', style({ opacity: 0 }))
-        ], { optional: true }),
-        query(':enter', [
-          style({ opacity: 0 }),
-          animate('300ms ease-in', style({ opacity: 1 }))
-        ], { optional: true })
-      ])
-    ])
-  ]
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   isDarkTheme = false;
 
   toggleTheme() {
     this.isDarkTheme = !this.isDarkTheme;
-  }
-
-  prepareRoute(outlet: any) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 }
