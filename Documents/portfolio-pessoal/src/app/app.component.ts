@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -28,6 +29,24 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppComponent {
   isDarkTheme = false;
+  isMobile = false;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.checkScreenSize();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.checkScreenSize();
+  }
+
+  checkScreenSize() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.isMobile = window.innerWidth <= 768;
+    } else {
+      this.isMobile = false; // Valor padrão para SSR
+    }
+  }
 
   toggleTheme() {
     this.isDarkTheme = !this.isDarkTheme;
