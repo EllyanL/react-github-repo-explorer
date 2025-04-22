@@ -17,7 +17,7 @@ Bem-vindo ao **React GitHub Repo Explorer**! 🚀 Este é um projeto incrível c
 
 ## 🚀 Como Rodar o Projeto
 1. Clone o repositório:
-   git clone https://github.com/seu-usuario/react-github-repo-explorer.git
+   git clone https://github.com/EllyanL/react-github-repo-explorer.git
 2. Entre na pasta do projeto:
   cd react-github-repo-explorer
 3. Instale as dependências:
